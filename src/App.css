@@ -1,0 +1,684 @@
+@import url('https://fonts.cdnfonts.com/css/adlery-pro');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(134, 238, 233);
+  font-family: "Fantasy", "Papyrus", cursive;
+}
+
+/* consistent page spacing */
+section {
+  margin: 0;
+  padding: 80px 20px;
+}
+
+.Logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30px;
+
+    
+  background-image: url("img2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Logo Styling */
+.Logo_img {
+  margin-bottom: 20px;
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 50%;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.12);
+
+  /* Depth + Glow */
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.25),
+    0 0 18px rgba(255, 255, 255, 0.35),
+    inset 0 0 10px rgba(255,255,255,0.18);
+
+  border: 3px solid rgba(255,255,255,0.35);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+/* Hover Effect */
+.Logo_img:hover {
+  transform: scale(1.08) rotate(4deg);
+  box-shadow:
+    0 12px 28px rgba(0,0,0,0.35),
+    0 0 28px rgba(255,215,0,0.55),
+    inset 0 0 12px rgba(255,255,255,0.22);
+
+  border-color: #ffd700;
+}
+
+/* Main Title */
+.AppName {
+  font-family: 'Adlery Pro', cursive;
+  font-size: 62px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  letter-spacing: 4px;
+  text-transform: capitalize;
+  text-align: center;
+
+  /* Glow + Depth */
+  text-shadow:
+    2px 2px 0 #1e3a8a,
+    4px 4px 8px rgba(0,0,0,0.35),
+    0 0 15px rgba(255,255,255,0.4);
+
+  /* Smooth effect */
+  transition: all 0.4s ease;
+}
+
+/* Hover Effect */
+.AppName:hover {
+  transform: scale(1.05);
+  color: #ffd700;
+  text-shadow:
+    2px 2px 0 #1e3a8a,
+    4px 4px 12px rgba(0,0,0,0.45),
+    0 0 25px rgba(255,215,0,0.6);
+}
+
+/* Home page */
+.HomePage {
+  position: relative;
+  min-height: 100vh;
+  background: #7ed9d5;
+}
+
+/* Top Right Auth */
+.TopRightAuth {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  display: flex;
+  gap: 14px;
+  z-index: 1000;
+}
+
+/* Shared Button Style */
+.LoginBtn,
+.RegisterBtn {
+  border: none;
+  padding: 12px 26px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.4px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+/* Login Button */
+.LoginBtn {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: 2px solid rgba(255,255,255,0.45);
+  backdrop-filter: blur(10px);
+}
+
+.LoginBtn:hover {
+  background: white;
+  color: #16a3a0;
+  transform: translateY(-3px);
+}
+
+/* Register Button */
+.RegisterBtn {
+  background: linear-gradient(135deg, #007cf0, #00c6ff);
+  color: white;
+}
+
+.RegisterBtn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 24px rgba(0,124,240,0.35);
+}
+
+/* Click Effect */
+.LoginBtn:active,
+.RegisterBtn:active {
+  transform: scale(0.96);
+}
+
+/* Form section */
+.RegisterSection,
+.LoginSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+/* Form Card */
+.RegisterCard,
+.LoginCard {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(18px);
+  padding: 35px;
+  border-radius: 22px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+/* Headings */
+.RegisterCard h2,
+.LoginCard h2 {
+  margin: 0;
+  font-size: 32px;
+  color: #fff;
+  text-align: center;
+}
+
+.RegisterCard p,
+.LoginCard p {
+  text-align: center;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 28px;
+}
+
+/* Inputs */
+.InputGroup {
+  margin-bottom: 18px;
+}
+
+.InputGroup label {
+  display: block;
+  margin-bottom: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.InputGroup input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background: rgba(255,255,255,0.85);
+  transition: 0.3s ease;
+  box-sizing: border-box;
+}
+
+.InputGroup input:focus {
+  background: white;
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.35);
+}
+
+/* Register Button */
+.RegisterButton,
+.LoginButton {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 10px;
+}
+
+.RegisterButton {
+  background: linear-gradient(135deg, #00c9a7, #007cf0);
+}
+
+.LoginButton {
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+}
+
+.RegisterButton:hover,
+.LoginButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+}
+
+.RegisterButton:active,
+.LoginButton:active {
+  transform: scale(0.97);
+}
+/* Navbar */
+.Navbar {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 18px 40px;
+  border-radius: 15px;
+  margin: 20px auto;
+  width: fit-content;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  backdrop-filter: blur(10px);
+}
+
+/* Links Container */
+.Home {
+  display: flex;
+  gap: 40px; 
+  align-items: center;
+  justify-content: center;
+
+}
+
+/* Nav Links */
+.Home button {
+  text-decoration: none;
+  font-family: 'Adlery Pro', cursive;
+  font-size: 25px;
+  color: #333;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Hover Effect */
+.Home button:hover {
+  color: #ffd700;
+  transform: translateY(-2px);
+}
+
+/* Underline Animation */
+.Home button::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: #ffd700;
+  transition: 0.3s ease;
+}
+
+.Home button:hover::after {
+  width: 100%;
+}
+
+.About {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin: 40px auto;
+  padding: 60px 40px;
+  max-width: 1000px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+  backdrop-filter: blur(14px);
+  color: white;
+  transition: 0.4s ease;
+  background-color: rgb(56, 129, 129);
+}
+.About:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 22px 45px rgba(0, 0, 0, 0.25),
+    0 0 20px rgba(255,255,255,0.12);
+}
+
+/* Left text side */
+.AboutText {
+  flex: 1;
+}
+
+/* Right image side */
+.AboutImage {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.AboutImage img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease;
+}
+
+.AboutImage img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .About {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .AboutImage {
+    justify-content: center;
+  }
+}
+
+/* Heading */
+.About h2 {
+  font-family: 'Adlery Pro', cursive;
+  font-size: 34px;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-shadow:
+    2px 2px 8px rgba(0,0,0,0.25),
+    0 0 12px rgba(255,255,255,0.18);
+}
+
+/* Tagline */
+.About h4 {
+  font-size: 20px;
+  font-style: italic;
+  color: #ffd700;
+  margin-bottom: 28px;
+  letter-spacing: 1px;
+}
+
+/* Paragraph */
+.About p {
+  font-size: 18px;
+  line-height: 2;
+  color: #1f302c;
+  margin-bottom: 25px;
+}
+
+/* Highlight bold words if used */
+.About strong {
+  color: #ffd700;
+}
+
+/* List */
+.About ul {
+  margin-top: 18px;
+  padding-left: 22px;
+}
+
+.About li {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: rgb(34, 31, 31);
+  list-style: none;
+  position: relative;
+  padding-left: 28px;
+}
+
+.About li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #ffd700;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .About {
+    margin: 40px 20px;
+    padding: 35px 25px;
+  }
+
+  .About h2 {
+    font-size: 38px;
+  }
+
+  .About h4 {
+    font-size: 18px;
+  }
+
+  .About p,
+  .About li {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+}
+
+/* Contact Section Wrapper */
+.Contact_details {
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Card Style */
+.ContactCard {
+  max-width: 800px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 25px;
+  padding: 50px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  color: rgb(241, 236, 236);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: 0.3s ease;
+  background-color: rgb(117, 159, 165);
+
+    
+  background-image: url("img6.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.ContactCard:hover {
+  transform: translateY(-5px);
+}
+
+/* Section Titles */
+.HC_details {
+  font-size: 15px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: #080806;
+  letter-spacing: 2px;
+}
+
+/* Paragraphs */
+.ContactCard p {
+  font-size: 12px;
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+/* Email + Phone Row */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+}
+
+/* Links */
+.ContactCard a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.ContactCard a:hover {
+  text-decoration: underline;
+}
+
+/* Map Container */
+.MapContainer {
+  margin-top: 20px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Map iframe */
+.MapContainer iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+}
+
+/* SERVICES PAGE*/
+.ServicesSection {
+  min-height: 100vh;
+  padding: 70px 40px;
+  background: linear-gradient(135deg, #111, #1c1c1c);
+  color: white;
+
+  
+  background-image: url("img2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.ServicesTitle {
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 15px;
+  color: #00ff99;
+  letter-spacing: 1px;
+}
+
+.ServicesSubtitle {
+  text-align: center;
+  font-size: 18px;
+  color: #ccc;
+  margin-bottom: 50px;
+}
+
+.ServicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.ServiceCard {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  padding: 28px;
+  border-radius: 22px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+  transition: all 0.35s ease;
+}
+
+.ServiceCard:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: #00ff99;
+  box-shadow: 0 20px 35px rgba(0,255,153,0.18);
+}
+
+.ServiceCard h3 {
+  font-size: 24px;
+  color: #00ff99;
+  margin-bottom: 18px;
+}
+
+.ServiceCard ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ServiceCard li {
+  margin-bottom: 12px;
+  color: #f2f2f2;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+
+/* Pricing Section */
+.PricingSection {
+  padding: 80px 40px;
+  background: linear-gradient(135deg, #101d1d, #bdf4ef);
+  min-height: 100vh;
+}
+
+.PricingTitle {
+  text-align: center;
+  font-size: 52px;
+  color: #7db8c0;
+  margin-bottom: 10px;
+}
+
+.PricingSubtitle {
+  text-align: center;
+  font-size: 18px;
+  color: #92b67a;
+  margin-bottom: 35px;
+}
+
+/* image gallery */
+.PricingGallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  margin-bottom: 45px;
+  perspective: 1000px;
+}
+
+.PricingGallery img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(141, 165, 119, 0.12);
+  transition: all 0.45s ease;
+  cursor: pointer;
+}
+
+.PricingGallery img:hover {
+  transform: rotateY(18deg) rotateX(6deg) scale(1.08);
+  box-shadow: 0 20px 35px rgba(0,0,0,0.25);
+  filter: brightness(1.08) saturate(1.15);
+}
+
+
+/* OTHER IMAGES DIM SLIGHTLY */
+.PricingGallery:hover img:not(:hover) {
+  transform: scale(0.95);
+  opacity: 0.75;
+}
+
+/* Pricing Grid */
+.PricingGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.PriceCard {
+  background: rgb(192, 207, 104);
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.PriceCard:hover {
+  transform: translateY(-6px);
+}
+
+.PriceCard h3 {
+  font-size: 18px;
+  color: #3f7070;
+  margin-bottom: 12px;
+}
+
+.PriceCard p {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1a1f1e;
+}
