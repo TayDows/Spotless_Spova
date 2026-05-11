@@ -38,7 +38,7 @@ export default function SpotlessSpovaHome(){
       <section className='About'>
         <div className='AboutText'>
           <h2>About Spotless Spova</h2>
-          <h4>You like them clean, we like them dirty.</h4>
+          <h4>You like them clean, we like them dirty</h4>
           <p>Spotless Spova is a premium sneaker cleaning and restoration brand proudly based in Sharon Park, Springs.
             <br />Built from a passion for sneaker culture and the importance of clean presentation, Spotless Spova was founded to give every pair a second life through expert care, restoration, and unmatched attention to detail.
             <br /> We specialize in professional sneaker care services including deep cleaning, suede and nubuck treatment, sole unyellowing, color restoration, and boot cleaning. 
