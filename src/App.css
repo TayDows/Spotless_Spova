@@ -153,74 +153,166 @@ section {
   transform: scale(0.96);
 }
 
-/* Form section */
+/* =========================
+   LOGIN + REGISTER UPGRADE
+========================= */
+
 .RegisterSection,
 .LoginSection {
+  min-height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px 20px;
+
+  padding: 40px 20px;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.65),
+      rgba(0,0,0,0.65)
+    ),
+    url("img2.jpg");
+
+  background-size: cover;
+  background-position: center;
 }
 
-/* Form Card */
+/* CARD DESIGN */
 .RegisterCard,
 .LoginCard {
   width: 100%;
-  max-width: 420px;
-  background: rgba(255,255,255,0.18);
+  max-width: 430px;
+
+  padding: 45px;
+
+  border-radius: 30px;
+
+  background: rgba(255,255,255,0.12);
+
   backdrop-filter: blur(18px);
-  padding: 35px;
-  border-radius: 22px;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.12);
-  border: 1px solid rgba(255,255,255,0.25);
+
+  border: 1px solid rgba(255,255,255,0.18);
+
+  box-shadow:
+    0 8px 35px rgba(0,0,0,0.35);
+
+  animation: formFade 0.7s ease;
 }
 
-/* Headings */
+/* HEADINGS */
 .RegisterCard h2,
 .LoginCard h2 {
-  margin: 0;
-  font-size: 32px;
-  color: #fff;
   text-align: center;
-}
 
-.RegisterCard p,
-.LoginCard p {
-  text-align: center;
-  color: rgba(255,255,255,0.9);
-  margin-bottom: 28px;
+  font-size: 38px;
+
+  color: white;
+
+  margin-bottom: 30px;
+
+  letter-spacing: 1px;
+
+  text-shadow:
+    0 2px 10px rgba(0,0,0,0.35);
 }
 
 /* Inputs */
-.InputGroup {
-  margin-bottom: 18px;
-}
-
-.InputGroup label {
-  display: block;
-  margin-bottom: 8px;
-  color: white;
-  font-weight: 600;
-  font-size: 14px;
-}
-
-.InputGroup input {
+.RegisterCard input,
+.RegisterCard select,
+.LoginCard input {
   width: 100%;
-  padding: 14px;
-  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 18px;
   border: none;
   outline: none;
+  border-radius: 14px;
   font-size: 15px;
-  background: rgba(255,255,255,0.85);
-  transition: 0.3s ease;
+  background: rgba(255,255,255,0.9);
   box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 
-.InputGroup input:focus {
+/* INPUT FOCUS EFFECT */
+.RegisterCard input:focus,
+.RegisterCard select:focus,
+.LoginCard input:focus {
   background: white;
-  box-shadow: 0 0 0 4px rgba(255,255,255,0.35);
+
+  transform: scale(1.02);
+
+  box-shadow:
+    0 0 0 4px rgba(0,199,255,0.25);
 }
 
+/* placeholder */
+.RegisterCard input::placeholder,
+.LoginCard input::placeholder {
+  color: #666;
+}
+
+/* Buttons */
+.RegisterCard button,
+.LoginCard button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 10px;
+}
+
+/* Register Button */
+.RegisterCard button {
+  background:
+    linear-gradient(
+      135deg,
+      #00c6ff,
+      #0072ff
+    );
+}
+
+/* Login Button */
+.LoginCard button {
+  background:
+    linear-gradient(
+      135deg,
+      #00c9a7,
+      #009688
+    );
+}
+
+/* Button hover */
+.RegisterCard button:hover,
+.LoginCard button:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 24px rgba(0,0,0,0.28);
+}
+
+/* Button active */
+.RegisterCard button:active,
+.LoginCard button:active {
+  transform: scale(0.97);
+}
+
+/* Smooth Card Animation */
+@keyframes formFade {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* Register Button */
 .RegisterButton,
 .LoginButton {
@@ -681,4 +773,71 @@ section {
   font-size: 28px;
   font-weight: 800;
   color: #1a1f1e;
+}
+
+/* Dashboard layout */
+.dashboard {
+  text-align: center;
+  padding-top: 120px;
+  min-height: 100vh;
+}
+
+/* Dashboard title */
+.dashboard h1 {
+  color: white;
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+/* Clickable cards (now buttons) */
+.card {
+  display: block;
+  width: 280px;
+  margin: 15px auto;
+  padding: 18px;
+  border: none;
+  border-radius: 14px;
+  background: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+  background: #f5f5f5;
+}
+
+/* Back button */
+.BackBtn {
+  margin-top: 25px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.25);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: 0.3s ease;
+}
+
+.BackBtn:hover {
+  background: white;
+  color: #16a3a0;
+  transform: translateY(-3px);
+}
+
+/* Optional smooth page feel */
+.dashboard p {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.dashboard p:hover {
+  color: #007cf0;
 }

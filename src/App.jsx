@@ -65,6 +65,8 @@ export default function SpotlessSpovaHome(){
       {page === "services" && <ServicesSection />}
       {page === "pricing" && <PricingSection />}
       {page === "contact" && <ContactDetails />}
+      {page === "customerDashboard" && <CustomerDashboard />}
+      {page === "providerDashboard" && <ProviderDashboard />}
     
     </div>
     
@@ -72,64 +74,104 @@ export default function SpotlessSpovaHome(){
 }
 
 /* Register component */
-function RegisterSection() {
+function RegisterSection({ setPage }) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [role, setRole] = useState("customer");
+
+  const handleRegister = () => {
+    const user = { name, email, password, role };
+
+    localStorage.setItem("spotlessUser", JSON.stringify(user));
+
+    alert("Registered Successfully!");
+    setPage("login");
+  };
+
   return (
     <section className="RegisterSection">
       <div className="RegisterCard">
         <h2>Create Account</h2>
-        <p>Join Spotless Spova today</p>
 
-        <div className="InputGroup">
-          <label htmlFor="fullname">Full Name</label>
-          <input type="text" id="fullname" placeholder="Enter full name" />
-        </div>
+        <input
+          type="text"
+          placeholder="Full Name"
+          onChange={(e) => setName(e.target.value)}
+        />
 
-        <div className="InputGroup">
-          <label htmlFor="email">Email Address</label>
-          <input type="email" id="email" placeholder="Enter email address" />
-        </div>
+        <input
+          type="email"
+          placeholder="Email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
-        <div className="InputGroup">
-          <label htmlFor="phone">Phone Number</label>
-          <input type="tel" id="phone" placeholder="Enter phone number" />
-        </div>
+        <input
+          type="password"
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-        <div className="InputGroup">
-          <label htmlFor="password">Password</label>
-          <input type="password" id="password" placeholder="Create password" />
-        </div>
+        <select onChange={(e) => setRole(e.target.value)}>
+          <option value="customer">Customer</option>
+          <option value="provider">Service Provider</option>
+        </select>
 
-        <button className="RegisterButton">Create Account</button>
+        <button onClick={handleRegister}>
+          Register
+        </button>
       </div>
     </section>
   );
 }
 
+/* Login component */
+function LoginSection({ setPage }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-/* Login Component */
-function LoginSection() {
+  const handleLogin = () => {
+    const savedUser = JSON.parse(localStorage.getItem("spotlessUser"));
+
+    if (
+      savedUser &&
+      email === savedUser.email &&
+      password === savedUser.password
+    ) {
+      if (savedUser.role === "customer") {
+        setPage("customerDashboard");
+      } else {
+        setPage("providerDashboard");
+      }
+    } else {
+      alert("Wrong Login Details");
+    }
+  };
+
   return (
     <section className="LoginSection">
       <div className="LoginCard">
-        <h2>Welcome Back</h2>
-        <p>Login to your account</p>
+        <h2>Login</h2>
 
-        <div className="InputGroup">
-          <label htmlFor="loginemail">Email Address</label>
-          <input type="email" id="loginemail" placeholder="Enter email address" />
-        </div>
+        <input
+          type="email"
+          placeholder="Email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
-        <div className="InputGroup">
-          <label htmlFor="loginpassword">Password</label>
-          <input type="password" id="loginpassword" placeholder="Enter password" />
-        </div>
+        <input
+          type="password"
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-        <button className="LoginButton">Login</button>
+        <button onClick={handleLogin}>
+          Login
+        </button>
       </div>
     </section>
   );
 }
-
 
 /* Contact details component */
 function ContactDetails() {
@@ -199,11 +241,11 @@ function PricingSection() {
 
       {/* ONLY 5 APPEALING IMAGES */}
       <div className="PricingGallery">
-        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="" />
-        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772" alt="" />
-        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519" alt="" />
-        <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77" alt="" />
-        <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2" alt="" />
+        <img src="img17.jpg" alt="" />
+        <img src="img16.jpg" alt="" />
+        <img src="img13.jpg" alt="" />
+        <img src="img18.jpg" alt="" />
+        <img src="img14.jpg" alt="" />
       </div>
 
       {/* PRICES */}
@@ -314,6 +356,56 @@ function ServicesSection() {
         ))}
       </div>
     </section>
+  );
+}
+
+/* CUSTOMER DASHBOARD */
+function CustomerDashboard({ setPage }) {
+  return (
+    <div className="dashboard">
+      <h1>Customer Dashboard</h1>
+
+      <button className="card" onClick={() => setPage("bookCleaning")}>
+        Book Shoe Cleaning
+      </button>
+
+      <button className="card" onClick={() => setPage("trackOrders")}>
+        Track Orders
+      </button>
+
+      <button className="card" onClick={() => setPage("pricing")}>
+        View Pricing
+      </button>
+
+      <button className="BackBtn" onClick={() => setPage("home")}>
+        Back Home
+      </button>
+    </div>
+  );
+}
+
+/* PROVIDER DASHBOARD */
+function ProviderDashboard({ setPage }) {
+  return (
+    <div className="dashboard">
+      <h1>Service Provider Dashboard</h1>
+
+      <button className="card" onClick={() => setPage("pendingOrders")}>
+        Pending Orders
+      </button>
+
+      <button className="card" onClick={() => setPage("pickupRequests")}>
+        Pickup Requests
+      </button>
+
+      <button className="card" onClick={() => setPage("completedJobs")}>
+        Completed Jobs
+      </button>
+
+      <button className="BackBtn" onClick={() => setPage("home")}>
+        Back Home
+      </button>
+    </div>
   );
 }
 
