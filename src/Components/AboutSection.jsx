@@ -22,7 +22,7 @@ export default function AboutSection() {
 
       <div className="AboutImage">
         <img
-          src="img9.jpg"
+          src="/img9.jpg"
           alt="Sneaker cleaning"
         />
       </div>
