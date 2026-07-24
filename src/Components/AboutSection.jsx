@@ -21,7 +21,7 @@ export default function AboutSection() {
         </div>
 
       <div className="AboutImage">
-        <img src="img9.jpg" alt=""/>
+        <img src="/img9.jpg" alt=""/>
       </div>
 
     </section>

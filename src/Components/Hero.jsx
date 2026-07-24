@@ -22,7 +22,7 @@ export default function Hero({ setPage }) {
       <div className="Logo">
         <img
           className="Logo_img"
-          src="Logo.png"
+          src="/Logo.png"
           alt="Spotless Logo"
         />
 

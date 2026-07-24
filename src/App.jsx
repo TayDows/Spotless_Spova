@@ -1,16 +1,16 @@
 import "./App.css";
 import React, { useState } from "react";
 
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import AboutSection from "./components/AboutSection";
-import RegisterSection from "./components/RegisterSection";
-import LoginSection from "./components/LoginSection";
-import ServicesSection from "./components/ServicesSection";
-import PricingSection from "./components/PricingSection";
-import ContactDetails from "./components/ContactDetails";
-import CustomerDashboard from "./components/CustomerDashboard";
-import ProviderDashboard from "./components/ProviderDashboard";
+import Navbar from "./Components/Navbar";
+import Hero from "./Components/Hero";
+import AboutSection from "./Components/AboutSection";
+import RegisterSection from "./Components/RegisterSection";
+import LoginSection from "./Components/LoginSection";
+import ServicesSection from "./Components/ServicesSection";
+import PricingSection from "./Components/PricingSection";
+import ContactDetails from "./Components/ContactDetails";
+import CustomerDashboard from "./Components/CustomerDashboard";
+import ProviderDashboard from "./Components/ProviderDashboard";
 
 export default function App() {
   const [page, setPage] = useState("home");
