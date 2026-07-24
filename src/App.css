@@ -22,7 +22,7 @@ section {
   margin-top: 30px;
 
     
-  background-image: url("img2.jpg");
+  background-image: url("/img2.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -540,7 +540,7 @@ section {
   background-color: rgb(117, 159, 165);
 
     
-  background-image: url("img6.jpg");
+  background-image: url("/img6.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -609,7 +609,7 @@ section {
   color: white;
 
   
-  background-image: url("img2.jpg");
+  background-image: url("/img2.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
