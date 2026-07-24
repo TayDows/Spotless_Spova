@@ -34,11 +34,11 @@ export default function PricingSection() {
 
       {/* ONLY 5 APPEALING IMAGES */}
       <div className="PricingGallery">
-        <img src="img17.jpg" alt="" />
-        <img src="img16.jpg" alt="" />
-        <img src="img13.jpg" alt="" />
-        <img src="img18.jpg" alt="" />
-        <img src="img14.jpg" alt="" />
+        <img src="/img17.jpg" alt="" />
+        <img src="/img16.jpg" alt="" />
+        <img src="/img13.jpg" alt="" />
+        <img src="/img18.jpg" alt="" />
+        <img src="/img14.jpg" alt="" />
       </div>
 
 
